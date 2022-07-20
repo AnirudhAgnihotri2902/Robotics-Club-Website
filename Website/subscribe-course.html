@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home | Robotics Club</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet"> 
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+  <script>
+      $(function(){
+  $(".logo").click(function(){
+    $(".svglogo").toggleClass("open");
+    $(".left").toggleClass("sliderleft");
+    $(".right").toggleClass("sliderright");
+    $( ".svglogo" ).fadeOut( 1000 );
+     setTimeout(
+   function() 
+   {
+   $("html").css("overflow-y","scroll");
+   }, 3500);
+   
+  });
+});
+
+  </script>
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Muli');
+* {
+  box-sizing: border-box;
+  font-family: 'Muli', sans-serif;
+}
+
+
+.left {
+  flex: 1;
+  z-index: 1;
+  height: 100%;
+  background-size: cover;
+  background-image: url('http://s966.info/library/r/red-curtain-background-hd/red-curtain-background-hd-11.jpg');
+}
+.right {
+  flex: 1;
+  z-index: 1;
+  height: 100%;
+  background-size: cover;
+  background-image: url('http://s966.info/library/r/red-curtain-background-hd/red-curtain-background-hd-11.jpg');
+}
+#Laag_1 {
+  z-index: 12;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 46.3%;
+  cursor: pointer;
+}
+.open {
+  animation-name: spin;
+  animation-duration: 100ms;
+  animation-iteration-count: 5;
+  animation-timing-function: linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sliderleft {
+  animation-name: slideleft;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+@keyframes slideleft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.sliderright {
+  animation-name: slideright;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+@keyframes slideright {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.card {
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  width: 240px;
+  height: 280px;
+  opacity: 0.85;
+}
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  border-radius: 5px;
+}
+.front {
+  transform: rotateY(0deg);
+  background: #9152f8;
+  background: -webkit-linear-gradient(top, #ffb547, #ff6363);
+  background: -o-linear-gradient(top, #ffb547, #ff6363);
+  background: -moz-linear-gradient(top, #ffb547, #ff6363);
+  background: linear-gradient(top, #ffb547, #ff6363);
+  text-align: center;
+  padding: 30px;
+}
+.back {
+  background: #9152f8;
+  background: -webkit-linear-gradient(top, #ffb547, #ff6363);
+  background: -o-linear-gradient(top, #ffb547, #ff6363);
+  background: -moz-linear-gradient(top, #ffb547, #ff6363);
+  background: linear-gradient(top, #ffb547, #ff6363);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  padding: 40px 15px;
+  color: #fff;
+}
+.card:hover .front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.card:hover .back {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.back .contact {
+  height: 90%;
+  width: 100%;
+  border: 5px solid white;
+  display: inline-block;
+}
+.front .contact {
+  height: 120px;
+  width: 120px;
+  border: 5px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.front .name {
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+}
+.front .job {
+  color: #fff;
+}
+.front hr {
+  border: none;
+  color: white;
+  border: 1px solid;
+}
+
+  </style>
+</head>
+
+<body>
+    <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="http://www.akgecrobotics.com" class="scrollto">Robotics Club AKGEC</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="http://www.akgecrobotics.com">Home</a></li>
+          <li>
+              <a href="#">Open Source</a>
+              <ul class="fh5co-sub-menu">
+									 	<li><a href="https://github.com/AKGECRobotics">GitHub</a></li>
+									 	<li><a href="educate.html">Educate</a></li>
+										<li>
+											<a href="#" class="fh5co-sub-ddown">Projects</a>
+											<ul class="fh5co-sub-menu">
+												<li><a href="http://teamrobocon.akgecrobotics.com" target="_blank">Robocon</a></li>
+												<li><a href="#" target="_blank">WRO</a></li>
+												<li><a href="#" target="_blank">FabWings</a></li>
+												<li><a href="#" target="_blank">3D Printer</a></li>
+												<li><a href="#" target="_blank">Soft Robotics</a></li>
+												<li><a href="#" target="_blank">Image Processing</a></li>
+												<li><a href="#" target="_blank">Machine Learning</a></li>
+											</ul>
+										</li>
+										<li>
+										    <a href="#" class="fh5co-sub-ddown">Annual Report</a>
+										    <ul class="fh5co-sub-menu">
+												<li><a href="Annual-Report-2018.pdf" target="_blank">Robocon 2018</a></li>
+												<li><a href="Annual-Report-2017.pdf" target="_blank">Robocon 2017</a></li>
+												<li><a href="#" target="_blank">Robocon 2016</a></li>
+												<li><a href="Annual-Report-2015.pdf" target="_blank">Robocon 2015</a></li>
+												<li><a href="Annual-Report-2014.pdf" target="_blank">Robocon 2014</a></li>
+											</ul>
+										</li>
+			   </ul>
+          </li>
+          <li><a href="http://www.akgecrobotics.com/#services">Technologies</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="https://webmail.hostinger.in">Webmail</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header>
+<div class="subscribe-course">
+    
+    
+
+<div id='container1'>
+<div class="box-height">
+<div class="box-custom">Choose Your Course</div></div>
+<br>
+This page is under construction
+<br>
+  <div class='card'>
+    <div class='front'>
+      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Arduino_Logo.svg/720px-Arduino_Logo.svg.png' class='contact' />
+      <span class='name'>Arduino</span>
+      <hr>
+      <span class='job'>Programming </span>
+    </div>
+    <div class='back'>
+        
+      <img src='https://media.giphy.com/media/149dkstl3g53QA/giphy.gif' class='contact' />
+      <span>Welcome To Embedded System</span>
+  </div></div>
+    <div class='card'>
+    <div class='front'>
+      <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzm0w3ewHiL4WMJwjUMVKA2sx4IO5Cb9HrMbdd4ezpwazSIk2U' class='contact' />
+      <span class='name'>Blender</span>
+      <hr>
+      <span class='job'>Designing & Simulation </span>
+    </div>
+    <div class='back'>
+      <img src='https://media.giphy.com/media/4yoNlYYwyaO5O/giphy.gif' class='contact' />
+      <span>Join The Creativity</span>
+  </div></div>
+      <div class='card'>
+    <div class='front'>
+      <img src='https://upload.wikimedia.org/wikipedia/commons/5/53/OpenCV_Logo_with_text.png' class='contact' />
+      <span class='name'>Image Processing</span>
+      <hr>
+      <span class='job'>OpenCV Algorithms</span>
+    </div>
+    <div class='back'>
+      <img src='https://media.giphy.com/media/GpHv0HSaQ3zmU/giphy.gif' class='contact' />
+      <span>Play With Images</span>
+  </div></div>
+        <div class='card'>
+    <div class='front'>
+      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Arduino_ftdi_chip-1.jpg/1200px-Arduino_ftdi_chip-1.jpg' class='contact' />
+      <span class='name'>Electronics</span>
+      <hr>
+      <span class='job'>Circuit Fabrication</span>
+    </div>
+    <div class='back'>
+      <img src='https://media.giphy.com/media/1ELKARxbkIuCk/giphy.gif' class='contact' />
+      <span>Circuit Designing</span>
+  </div></div>
+
+
+
+    
+                      </div>
+
+</div>
+
+
+  
+
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>Club</h3>
+            <p>Robotics Club AKGEC is a open source community where we work upon amazing projects like Soft Robotics, 3D Printer, Quadcopter, etc. Also participate in national as well as international competitions like Robocon and WRO.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.akgecrobotics.com">Robotics Club</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://teamrobocon.akgecrobotics.com">Team Robocon</a></li>              
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.youtube.com/channel/UCUV2H2yr99jMt8Vo8gMDWfQ">YouTube</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.facebook.com/roboticclubakgec">Facebook Robotics Club</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.facebook.com/akgec.robocon">Facebook Team Robocon</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Ajay Kumar Garg Engineering College,<br>
+               Ghaziabad, Uttar Pradesh <br>
+               201009
+               <br>
+              <strong>Phone:</strong>+91-9870341619<br>
+              <strong>Email:</strong>contact@akgecrobotics.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="http://www.facebook.com/roboticclubakgec" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/akgecrobotics/" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to our newsletter and stay updated about Technomancy. Newsletter keeps you informed about the events organized by Robotics Club AKGEC. Also this newsletter will send you information about latest technologies on which we are working.
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><a href="http://www.akgecrobotics.com">Robotics Club</a> Web Department</strong>. All Rights Reserved
+      </div>
+      
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js'></script>
+  <script src="js/main.js"></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="js/index1.js"></script>
+
+</body>
+</html>

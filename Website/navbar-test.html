@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dropdown Menu with Search Box | CodingNepal</title>
+
+  
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet"> 
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/style1.css">
+  
+  <script type="text/javascript">
+      $(window).load(function(){ 
+           
+          $(".loader").fadeOut("slow");
+    });
+  </script>
+
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.navwrapper{
+  background: #171c24;
+  position: fixed;
+  width: 100%;
+}
+.navwrapper nav{
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .navcontent{
+  display: flex;
+  align-items: center;
+}
+nav .navcontent .links{
+  margin-left: 80px;
+  display: flex;
+}
+.navcontent .logo a{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+.navcontent .links li{
+  list-style: none;
+  line-height: 70px;
+}
+.navcontent .links li a,
+.navcontent .links li label{
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.navcontent .links li label{
+  display: none;
+}
+.navcontent .links li a:hover,
+.navcontent .links li label:hover{
+  background: #323c4e;
+}
+.navwrapper .search-icon,
+.navwrapper .menu-icon{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+}
+.navwrapper .menu-icon{
+  display: none;
+}
+.navwrapper #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+}
+
+.navwrapper .search-box{
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.navwrapper #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  background: #171c24;
+  padding: 0 100px 0 15px;
+}
+.search-box input::placeholder{
+  color: #f2f2f2;
+}
+.search-box .go-icon{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 60px;
+  width: 70px;
+  background: #171c24;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.navwrapper input[type="checkbox"]{
+  display: none;
+}
+
+/* Dropdown Menu code start */
+.navcontent .links ul{
+  position: absolute;
+  background: #171c24;
+  top: 80px;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.navcontent .links li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.navcontent .links ul li a{
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  border-radius: 0px!important;
+}
+.navcontent .links ul ul{
+  position: absolute;
+  top: 0;
+  right: calc(-100% + 8px);
+}
+.navcontent .links ul li{
+  position: relative;
+}
+.navcontent .links ul li:hover ul{
+  top: 0;
+}
+
+/* Responsive code start */
+@media screen and (max-width: 1250px){
+  .navwrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .navcontent .links{
+    margin-left: 30px;
+  }
+  .navcontent .links li a{
+    padding: 8px 13px;
+  }
+  .avnwrapper .search-box{
+    max-width: calc(100% - 100px);
+  }
+  .navwrapper .search-box input{
+    padding: 0 100px 0 15px;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .navwrapper .menu-icon{
+    display: block;
+  }
+  .navwrapper #show-menu:checked ~ .menu-icon i::before{
+    content: "\f00d";
+  }
+  nav .navcontent .links{
+    display: block;
+    position: fixed;
+    background: #14181f;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left: 0;
+    max-width: 350px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    transition: all 0.3s ease;
+  }
+  nav #show-menu:checked ~ .navcontent .links{
+    left: 0%;
+  }
+  .navcontent .links li{
+    margin: 15px 20px;
+  }
+  .navcontent .links li a,
+  .navcontent .links li label{
+    line-height: 40px;
+    font-size: 20px;
+    display: block;
+    padding: 8px 18px;
+    cursor: pointer;
+  }
+  .navcontent .links li a.desktop-link{
+    display: none;
+  }
+
+  /* dropdown responsive code start */
+  .navcontent .links ul,
+  .navcontent .links ul ul{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+    max-height: 0px;
+    overflow: hidden;
+  }
+  .navcontent .links #show-features:checked ~ ul,
+  .navcontent .links #show-services:checked ~ ul,
+  .navcontent .links #show-items:checked ~ ul{
+    max-height: 100vh;
+  }
+  .navcontent .links ul li{
+    margin: 7px 20px;
+  }
+  .navcontent .links ul li a{
+    font-size: 18px;
+    line-height: 30px;
+    border-radius: 5px!important;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .navwrapper nav{
+    padding: 0 10px;
+  }
+  .navcontent .logo a{
+    font-size: 27px;
+  }
+  .navwrapper .search-box{
+    max-width: calc(100% - 70px);
+  }
+  .navwrapper .search-box .go-icon{
+    width: 30px;
+    right: 0;
+  }
+  .navwrapper .search-box input{
+    padding-right: 30px;
+  }
+}
+
+.dummy-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  z-index: -1;
+  padding: 0 20px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.dummy-text h2{
+  font-size: 45px;
+  margin: 5px 0;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="navwrapper">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="navcontent">
+      <div class="logo"><a href="#">Robotics Club AKGEC</a></div>
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#" class="desktop-link">Open Source</a>
+            <input type="checkbox" id="show-features">
+            <label for="show-features">Open Source</label>
+            <ul>
+              <li><a href="#">Drop Menu 1</a></li>
+              <li><a href="#">Drop Menu 2</a></li>
+              <li><a href="#">Drop Menu 3</a></li>
+              <li><a href="#">Drop Menu 4</a></li>
+            </ul>
+          </li>
+          
+          
+          <li>
+            <a href="#" class="desktop-link">Annual Report</a>
+            <input type="checkbox" id="show-services">
+            <label for="show-services">Annual Report</label>
+            <ul>
+              <li><a href="#">Drop Menu 1</a></li>
+              <li><a href="#">Drop Menu 2</a></li>
+              <li><a href="#">Drop Menu 3</a></li>
+              <li>
+                <a href="#" class="desktop-link">More Items</a>
+                <input type="checkbox" id="show-items">
+                <label for="show-items">More Items</label>
+                <ul>
+                  <li><a href="#">Sub Menu 1</a></li>
+                  <li><a href="#">Sub Menu 2</a></li>
+                  <li><a href="#">Sub Menu 3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Alumini</a></li>
+          <li><a href="#">Register</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+      <form action="#" class="search-box">
+        <input type="text" placeholder="Type Something to Search..." required>
+        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+      </form>
+    </nav>
+  </div>
+
+
+
+  
+  <section id="intro">
+    
+
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active" style="background-image: url('rec1.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Robocon 2020 Theme<!---We Integrate Technologies---></h2>
+                <!---<p>Start Your Journey With Us<!--We integrate technologies and domains to solve different robotic tasks</p>-->
+                <a href="akgec_2020_robocon.rar" class="btn-get-started scrollto">Download Package</a>
+              </div>
+            </div>
+          </div>
+         <!-- 
+          <div class="carousel-item" style="background-image: url('img/intro-carousel/1.jpeg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Our Robots Spark Curiosity </h2>
+                <p> The concept of the ABU Robocon 2018's Theme & Rules is based on an interesting folk game called “ Shuttlecock Throwing”.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url('img/intro-carousel/3.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Team Enginerds</h2>
+                <p>Inspiring robots need inspired engineers</p>
+              </div>
+            </div>
+          </div>
+<!--
+          <div class="carousel-item" style="background-image: url('img/intro-carousel/4.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Nam libero tempore</h2>
+                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
+                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url('img/intro-carousel/5.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Magnam aliquam quaerat</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+              </div>
+            </div>
+          </div>
+          
+
+        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+    -->
+  </section><!-- #intro -->
+  
+    <section id="services">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Competitions</h3>
+          <p>Robotics Club represents Ajay Kumar Garg Engineering College in various National and International competitions</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="fa fa-trophy" aria-hidden="true"></i></div>
+            <h4 class="title">ABU Robocon</h4>
+            <p class="description">
+The ABU Asia-Pacific Robot Contest is an Asian Oceanian College robot competition, founded in 2002 by Asia-Pacific Broadcasting Union.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="fas fa-robot"></i></div>
+            <h4 class="title">Mitsubishi Electric Cup</h4>
+            <p class="description">Participating teams are required to independently design and produce a complete set of devices/models by using mitsubishi electric factory automation products.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="fab fa-steam"></i></div>
+            <h4 class="title">World Robot Olympiad</h4>
+            <p class="description">Starting in 2004, World Robot Olympiad has developed to a truly global competition. WRO tournaments are organized in more than 60 countries.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="fab fa-searchengin"></i></div>
+            <h4 class="title">NI-Yantra</h4>
+            <p class="description">NIYANTRA is an annual System Design contest organized by National Instruments to foster the spirit of innovation in engineering students.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="fas fa-drafting-compass"></i></div>
+            <h4 class="title">Technovation</h4>
+            <p class="description">The event is planned with different theme based technological challenges to facilitate participation from different categories of talent.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="fas fa-laptop-code"></i></div>
+            <h4 class="title">Smart India Hackathon</h4>
+            <p class="description">It is a national level technical event conducted by the govt of India. This event is a another push to digital India initiative.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #services -->
+    
+
+
+  <main id="main">
+
+    
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h2><div >Learn Engineering By Building Awesomeness</div></h2>
+          
+          <center><a href="gallery.html" class="btn-get-started scrollto">Learn more about our projects</a></center>
+        </header>
+
+        
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Technologies</h3>
+          <p>This section includes all the technologies that we use in our robots to perform any perticular task.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
+            <h4 class="title">Cad Designing</h4>
+            <p class="description">Before we start to fabricate the final bot, we need to first design and simulate the whole mechnical structure first.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-people-outline"></i></div>
+            <h4 class="title">Image Processing</h4>
+            <p class="description">The power of image processing can replace all the sensors. You will watch the live example of image processing in Bot Show.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-paper-outline"></i></div>
+            <h4 class="title">Embedded Systems</h4>
+            <p class="description">Embedded systems are heart of our robots. We use arduino and raspberry pi in our bots to perform tasks.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+            <h4 class="title">Pneumatics</h4>
+            <p class="description">Simplicity of design and control, Reliability and Safety all these factors make pneumatics a powerfull tool for our machines.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
+            <h4 class="title">Sensors</h4>
+            <p class="description">We use ultrasonic, proximity, gyroscope, etc. Including line following sensors LSA08 in our robots. </p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+            <h4 class="title">Electronics</h4>
+            <p class="description">Electronics is a sub-discipline of engineering and allow you to specialize in designing devices and system based on printed circuit board.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+    <!--
+    <section id="call-to-action" class="wow fadeIn">
+      <div class="container text-center">
+        <h3>Subscribe our mailing list</h3>
+        <p> By filling this form you are subscribing Robotics Club AKGEC newsletter to get updates on the latest technologies on which we are working.</p>
+        <form class="subscribe" method="post">
+                                    <p class="alert-success"></p>
+                                    <p class="alert-warning"></p>
+                                    <div class="subscribe-hide">
+                                        <input class="subscribe-email" type="email" id="subscribe-email" name="subscribe-email" required>
+                                        <button  type="submit" id="subscribe-submit" class="cta-btn">Subscribe Now</button>
+                                        <span id="subscribe-loading" class="btn"> <i class="fa fa-refresh fa-spin"></i> </span>
+                                        <div class="subscribe-error"></div>
+                                    </div>
+                                    <div class="subscribe-message"></div>
+                            </form>
+      </div>
+    </section>-->
+
+    
+    <!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+          <h3><font color="ffffff">Robotics Club Facts</font> </h3>
+          <p><font color="ffffff">We build robots to spark curiosity.</font></p>
+        </header>
+
+        <div class="row counters">
+
+  				<div class="col-lg-3 col-6 text-center">
+            <span>70+</span>
+            <p><font color="ffffff">Alumni</font></p>
+  				</div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span>10+</span>
+            <p><font color="ffffff">Projects</font></p>
+  				</div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span>7+</span>
+            <p><font color="ffffff">Start Ups</font></p>
+  				</div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span>21+</span>
+            <p><font color="ffffff">Members</font></p>
+  				</div>
+
+  			</div>
+
+        
+
+      </div>
+    </section><!-- #facts -->
+    
+        <!--==========================
+     Testimonials Section
+    ============================-->
+    <section id="testimonials" class="section-bg wow fadeInUp">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Testimonials</h3>
+        </header>
+        <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card d-flex mx-auto">
+                      <div class="card-image"> <img class="img-fluid d-flex mx-auto" src="images/ashiv_shah.jpg" > </div>
+                      <div class="card-text">
+                          <div class="card-title"></div> We have started the journey of Robocon in year 2014. With every upcoming year the performance of the team in national contest is growing significantly with 6th position in league matches among 107 teams of Robocon 2018 held at Balewadi Stadium, Pune.
+                      </div>
+                      <div class="footer"> <span id="name">Ashiv Shah
+                        <br></span> <span id="position">COO of <a href="#">AKGEC Skills</a></span> </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card d-flex mx-auto">
+                      <div class="card-image"> <img class="img-fluid d-flex mx-auto" src="images/gaurav.svt.jpg"> </div>
+                      <div class="card-text">
+                          <div class="card-title"></div> As faculty coordinator of the Robotics Club, it has been a jaw-dropping experience to witness the simplest forms of <b>Engineering</b> at various national and international platforms.
+                      </div>
+                      <div class="footer"> <span id="name">Gaurav Srivastava<br></span> <span id="position">Scientific Officer of <a href="#">AKGEC Skills</a></span> </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card d-flex mx-auto ">
+                      <div class="card-image"> <img class="img-fluid d-flex mx-auto" src="images/amit_sharma.jpg"> </div>
+                      <div class="card-text">
+                          <div class="card-title"></div> The job of an engineering student is to build things from an early stage prototype into something that people can value professionally and the students of Robotics Club are exceptionally well in this job.
+                      </div>
+                      <div class="footer"> <span id="name">Amit Sharma<br></span> <span id="position">Scientific Officer of<a href="#">AKGEC Skills</a></span> </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+<!--
+        <div class="owl-carousel testimonials-carousel">
+
+          <div class="testimonial-item">
+            <img src="images/ashiv_shah.jpg" class="testimonial-img" alt="" height="120px" width="70px">
+            <h3>Ashiv Shah</h3>
+            <h4>COO, AKGEC Skills</h4>
+            <p>
+              <img src="img/quote-sign-left.png" class="quote-sign-left" alt="">
+           We have started the journey of Robocon in year 2014. With every upcoming year the performance of the team in national contest is growing significantly with 6th position in league matches among 107 teams of Robocon 2018 held at Balewadi Stadium, Pune.
+              <img src="img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="images/gaurav.svt.jpg" class="testimonial-img" alt="" height="120px" width="70px">
+            <h3>Gaurav Srivastava</h3>
+            <h4>Scientific Officer, AKGEC Skills</h4>
+            <p>
+              <img src="img/quote-sign-left.png" class="quote-sign-left" alt="">
+           As faculty coordinator of the Robotics Club, it has been a jaw-dropping experience to witness the simplest forms of <b>Engineering</b> at various national and international platforms.
+              <img src="img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="images/amit_sharma.jpg" class="testimonial-img" alt="" height="120px" width="70px">
+            <h3>Amit Sharma</h3>
+            <h4>Scientific Officer, AKGEC Skills</h4>
+            <p>
+              <img src="img/quote-sign-left.png" class="quote-sign-left" alt="">
+              The job of an engineering student is to build things from an early stage prototype into something that people can value professionally and the students of Robotics Club are exceptionally well in this job. 
+              <img src="img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+          -->
+<!--
+          <div class="testimonial-item">
+            <img src="img/" class="testimonial-img" alt="">
+            <h3>Shubham Jain</h3>
+            <h4>Alumni, Robotics Club</h4>
+            <p>
+              <img src="img/quote-sign-left.png" class="quote-sign-left" alt="">
+              ............................
+              <img src="img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="img/" class="testimonial-img" alt="">
+            <h3>Sandesh Singh</h3>
+            <h4>Alumni, Robotics Club</h4>
+            <p>
+              <img src="img/quote-sign-left.png" class="quote-sign-left" alt="">
+              .................................
+              <img src="img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+-->
+        </div>
+
+      </div>
+    </section><!-- #testimonials -->
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    
+    <!--
+    <section id="contact" class="section-bg wow fadeInUp">
+      <div class="container">
+
+        <div class="section-header">
+          <h3>Contact Us</h3>
+          <p>We'd love to hear from you</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>Ajay Kumar Garg Engineering College, Ghaziabad, Uttar Pradesh 201009</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+91-9870341619</a></p>
+              <p><a href="tel:+155895548855">+91-9450970187</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">help@akgecrobotics.com</a></p>
+              <p><a href="mailto:info@example.com">contact@akgecrobotics.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="email.php" method="POST">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="name" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" id="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section>--><!-- #contact -->
+    
+
+
+
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>Club</h3>
+            <p>Robotics Club AKGEC is a open source community where we work upon amazing projects like Soft Robotics, 3D Printer, Quadcopter, etc. Also participate in national as well as international competitions like Robocon and WRO.</p>
+          
+                            
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.akgecrobotics.com">Robotics Club</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://teamrobocon.akgecrobotics.com">Team Robocon</a></li>              
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.youtube.com/channel/UCUV2H2yr99jMt8Vo8gMDWfQ">YouTube</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.facebook.com/roboticclubakgec">Facebook Robotics Club</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.facebook.com/akgec.robocon">Facebook Team Robocon</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Ajay Kumar Garg Engineering College,<br>
+               Ghaziabad, Uttar Pradesh <br>
+               201009
+               <br>
+              <strong>Phone:</strong>+91-9870341619<br>
+              <strong>Email:</strong>contact@akgecrobotics.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="http://www.facebook.com/roboticclubakgec" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/akgecrobotics/" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="http://www.youtube.com/channel/UCUV2H2yr99jMt8Vo8gMDWfQ" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="http://www.facebook.com/akgec.robocon" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to our newsletter and stay updated about our events. Newsletter keeps you informed about the events organized by Robotics Club AKGEC. Also this newsletter will send you information about latest technologies on which we are working.
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><a href="http://www.akgecrobotics.com">Robotics Club</a> Web Department</strong>. All Rights Reserved
+      </div>
+      
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    
+  
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js'></script>
+  <script  src="js/index.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!--End of Tawk.to Script-->
+  
+
+</body>
+</html>
