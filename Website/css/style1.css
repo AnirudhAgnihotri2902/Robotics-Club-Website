@@ -1,0 +1,162 @@
+/* basics */
+/* shadows */
+/* style */
+.wrapper {
+  width: 100vw;
+  height: 33.3333333333vw;
+  margin: 10vh auto;
+  background: none;
+  position: relative;
+  text-align: center;
+}
+
+.bubble {
+  width: 10vw;
+  height: 10vw;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.08), 0px 15px 35px 0px rgba(49, 65, 93, 0.1);
+  border-radius: 100%;
+  position: absolute;
+  margin-left: -6.25vw;
+}
+
+.one {
+  left: 22%;
+  top: -20%;
+}
+
+.two {
+  left: 34%;
+  top: -20%;
+
+}
+
+.three {
+  left: 46%;
+  top: -20%;
+
+}
+
+.four {
+  left: 58%;
+  top: -20%;
+
+}
+
+.five {
+  left: 22%;
+  top: 14%;
+
+}
+
+.six {
+  left: 34%;
+  top: 14%;
+
+}
+
+.seven {
+  left: 46%;
+  top: 14%;
+
+}
+
+.eight {
+  left: 58%;
+  top: 14%;
+
+}
+
+.nine {
+  left: 10%;
+  top: -20%;
+
+}
+
+.ten {
+  left: 10%;
+  top: 14%;
+
+}
+.eleven {
+  left: 70%;
+  top: 14%;
+
+}
+.twelve {
+  left: 82%;
+  top: 14%;
+
+}
+.thirteen {
+  left: 94%;
+  top: 14%;
+
+}
+.fourteen{
+  left: 22%;
+  top: 48%;
+
+}
+.fifteen {
+  left: 34%;
+  top: 48%;
+
+}
+.sixteen {
+  left: 46%;
+  top: 48%;
+
+}
+.seventeen {
+  left: 58%;
+  top: 48%;
+
+}
+.eighteen {
+  left: 70%;
+  top: 48%;
+
+}
+.nineteen {
+  left: 82%;
+  top: 48%;
+
+}.twenty {
+  left: 94%;
+  top: 48%;
+
+}
+.twentyone {
+  left: 22%;
+  top: 82%;
+
+}
+.twentytwo {
+  left: 34%;
+  top: 82%;
+
+}
+.twentythree {
+  left: 46%;
+  top: 82%;
+
+}
+.twentyfour {
+  left: 58%;
+  top: 82%;
+
+}
+.twentyfive {
+  left: 70%;
+  top: 82%;
+
+}
+.fourty {
+  left: 10%;
+  top: 48%;
+
+}
+
+
+
+
