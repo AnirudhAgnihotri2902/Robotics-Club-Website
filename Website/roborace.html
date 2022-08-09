@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RoboRace | Robotics Club</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <!--Import materialize.css-->
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+.heigh{
+    padding:40% 0% 40%;
+}
+
+
+.card {
+    border-radius: 1rem;
+    box-shadow: 0px -10px 0px #eed62b
+}
+
+@media(max-width:767px) {
+    .card {
+        margin: 1rem 0.7rem 1rem;
+        max-width: 80vw
+    }
+}
+@media(min-width:1000px) {
+  img{
+    width: 100%;
+    height:100%;
+  }
+}
+
+img {
+    width: 70%;
+    height: 70%;
+    align-items: center;
+}
+
+.col-md-4 {
+    padding: 0 0.5rem
+}
+
+.card-title {
+    font-size: 1rem;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-family: 'IM Fell French Canon SC'
+}
+
+.card-text {
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.8rem;
+    color: rgb(82, 81, 81);
+    line-height: 1.4rem
+}
+
+.footer {
+    border-top: none;
+    text-align: center;
+    line-height: 1.2rem;
+    padding: 2rem 0 1.4rem 0;
+    font-family: 'Varela Round'
+}
+
+#name {
+    font-size: 0.8rem;
+    font-weight: bold
+}
+
+#position {
+    font-size: 0.7rem
+}
+
+a {
+    color: #eed62b;
+    font-weight: bold
+}
+
+a:hover {
+    color: #eed62b;
+}
+
+
+  </style>
+  <script type="text/javascript">
+      $(window).load(function(){ 
+           
+          $(".loader").fadeOut("slow");
+    });
+  </script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+
+<body>
+    <style>
+#fb-root > div.fb_dialog.fb_dialog_advanced {
+ right: initial !important;
+ left: 18pt;
+ z-index: 9999999 !important;
+}
+#fb-root > div.fb_dialog.fb_dialog_mobile {
+ right: initial !important;
+ left: 18pt;
+ z-index: 9999999 !important;
+}
+.fb-customerchat.fb_invisible_flow.fb_iframe_widget:not(.fb_iframe_widget_fluid) iframe {
+ right: initial !important;
+ left: 18pt !important;
+}
+
+</style>
+    <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="240597906138550"
+  theme_color="#ffc300"
+  logged_in_greeting="Welcome ! Let us know if you have any question."
+  logged_out_greeting="Welcome ! Let us know if you have any question.">
+</div>
+
+
+   
+   <div class="loader">
+       
+   </div> 
+
+  <!--==========================
+    Header
+  ============================-->
+  
+  <header id="header" class="topheader">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="http://www.akgecrobotics.com" class="scrollto">Robotics Club AKGEC</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="http://www.akgecrobotics.com">Home</a></li>
+          <li>
+              
+              <a href="#" class="nav-menu">Open Source</a>
+              <ul class="sf-with-ul">
+									 	<li><a href="https://github.com/AKGECRobotics">GitHub</a></li>
+									 	<li><a href="educate.html">Educate</a></li>
+										
+										<li>
+										    <a href="#" class="nav-menu sf-with-ul">Annual Report</a>
+										    <ul>
+                          
+                        <li><a href="annualreport2020.pdf" target="_blank">Robocon 2020</a></li>
+                        <li><a href="#" target="_blank">Robocon 2019</a></li>
+												<li><a href="Annual-Report-2018.pdf" target="_blank">Robocon 2018</a></li>
+												<li><a href="Annual-Report-2017.pdf" target="_blank">Robocon 2017</a></li>
+												<li><a href="#" target="_blank">Robocon 2016</a></li>
+												<li><a href="Annual-Report-2015.pdf" target="_blank">Robocon 2015</a></li>
+												<li><a href="Annual-Report-2014.pdf" target="_blank">Robocon 2014</a></li>
+											</ul>
+										</li>
+			   </ul>
+          </li>
+          <li><a href="register_.html">Register</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header>
+
+<!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    
+
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active" style="background-image: url('technoverse.jpeg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Roborace</h2>
+                <a href="#services" class="btn-get-started scrollto">View more</a>
+              </div>
+            </div>
+          </div>
+       
+  </section><!-- #intro -->
+  
+    <section id="services">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <br>
+          <br>
+          <h3>RoboRace</h3>
+          <p>AKGEC Robotics Club presents RoboRace Competitions</p>
+        </header>
+        
+        <h3>Game description</h3>
+        <p>The task is to build a robot either wired or wireless within the specified
+          dimensions to achieve the maximum speed to beat other robots on the given track
+          and reach the finishing line in minimum time. There will be two trial runs and on the
+          basis of the fastest times and points earned from hurdles, teams will be selected for
+          the final round.
+          </p>
+          <center><img src="technoverse.jpeg"></center>
+        <h3>Rounds</h3>
+        <p>Each team will be given three chances to complete the racecourse and the time for
+          each round will be noted. after every team has completed the race least time taken
+          from the provided three chances will be considered and the top 3 teams will be
+          awarded.
+          </p>
+          <h5>Arena Specification</h5>
+          <p>
+            Dimensions: 20X20 ft2
+            <br>
+            Track length: 80 feet
+          </p>
+          <h5>Specification of the track</h5>
+          <p>The track will be an elongated shape spread from edge to
+            edge from start to finish.</p>
+            <h5>Track Dimension</h5>
+            <p>
+              Minimum width 40 cm<br>
+              Maximum width 60 cm<br>
+              Maximum height of Hurdle 20 cm from base.
+              </p>
+        <button type="button" class="btn btn-outline-warning">Download RuleBook</button>
+        
+        <button type="button" class="btn btn-outline-warning">Register Here</button>
+      </div>
+    </section><!-- #services -->
+    
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>Club</h3>
+            <p>Robotics Club AKGEC is a open source community where we work upon amazing projects like Soft Robotics, 3D Printer, Quadcopter, etc. Also participate in national as well as international competitions like Robocon and WRO.</p>
+          
+                            
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.akgecrobotics.com">Robotics Club</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://teamrobocon.akgecrobotics.com">Team Robocon</a></li>              
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.youtube.com/channel/UCUV2H2yr99jMt8Vo8gMDWfQ">YouTube</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.facebook.com/roboticclubakgec">Facebook Robotics Club</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="http://www.facebook.com/akgec.robocon">Facebook Team Robocon</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Ajay Kumar Garg Engineering College,<br>
+               Ghaziabad, Uttar Pradesh <br>
+               201009
+               <br>
+               <strong>Phone: </strong>+91-7838990403<br>
+               <strong>Email: </strong>akgecrobotics@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="http://www.facebook.com/roboticclubakgec" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/akgecrobotics/" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to our newsletter and stay updated about our events. Newsletter keeps you informed about the events organized by Robotics Club AKGEC. Also this newsletter will send you information about latest technologies on which we are working.
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><a href="http://www.akgecrobotics.com">Robotics Club</a> Web Department</strong>. All Rights Reserved
+      </div>
+      
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    
+  
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js'></script>
+  <script  src="js/index.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!--End of Tawk.to Script-->
+  
+</body>
+</html>
